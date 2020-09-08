@@ -5,7 +5,6 @@ ruby '2.7.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
-# Use sqlite3 as the database for Active Record
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -21,6 +20,7 @@ gem 'bootstrap', '~> 4.5', '>= 4.5.2'
 gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'pg'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
@@ -35,7 +35,6 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'sqlite3'
   gem 'rails_12factor', group: :production
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
