@@ -1,33 +1,60 @@
-<div class="container">
-  <div class="card">
-    <div class="card-body">
-      <h1>Entries</h1>
+<div class="container mx-auto flex flex-col my-12">
+  <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+      <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead>
 
-      <table class="table table-striped">
-        <thead >
-          <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Date</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @entries.each do |entry| %>
             <tr>
-              <td><%= entry.title %></td>
-              <td><%= entry.description %></td>
-              <td><%= entry.date %></td>
-              <td><%= link_to 'Show', entry, :class => "btn btn-primary" %></td>
-              <td><%= link_to 'Edit', edit_entry_path(entry), :class => "btn btn-primary" %></td>
-              <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+              <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                Title
+              </th>
+              <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                Description
+              </th>
+              <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                Date
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            <tr>
+                <% @entries.each do |entry| %>
+              <td class="px-6 py-4 whitespace-no-wrap">
+                <div class="flex items-center">
+                  <div class="ml-4">
+                    <div class="text-sm leading-5 font-medium text-gray-900">
+                      <%= entry.title %>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="px-6 py-4 whitespace-no-wrap">
+                <%= entry.description %>
+              </td>
+              <td class="px-6 py-4 whitespace-no-wrap">
+                <span class="px-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                  <td><%= entry.date %></td>
+                </span>
+              </td>
+
+              <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
+                <%= link_to 'Show', entry, :class => "text-indigo-600 hover:text-indigo-900" %>
+              </td>
+
+              <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
+              <%= link_to 'Edit', edit_entry_path(entry), :class => "text-indigo-600 hover:text-indigo-900" %>
+              </td>
+
+              <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
+              <%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' }, :class => "text-indigo-600 hover:text-indigo-900" %>
+              </td>
             </tr>
           <% end %>
-        </tbody>
-      </table>
-
-      <br>
+            <!-- More rows... -->
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
